@@ -1,114 +1,97 @@
-html, body {
-	height: 100%;
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
-body {
-	background: #222;
-	margin: 0;
-	overflow: hidden;
-	overflow-y: hidden;
-
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 38px;
+.carousel {
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
 }
 
-.post {
+.pane-container {
+  height: 100%;
+  width: 100%;
+  background-color: #ddd;
+}
+
+.pane-container.transition {
+  transition: left .4s ease-in-out;
+}
+
+.pane {
+  float: left;
+  height: 100%;
+  width: 100%;
+}
+
+.pane:nth-child(1) {
+  background: #42d692;
+}
+
+.pane:nth-child(2) {
+  background: #4986e7;
+}
+
+.pane:nth-child(3) {
+  background: #d06b64;
+}
+
+.pane:nth-child(4) {
+  background: #42d692;
+}
+
+.card {
 	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	box-sizing: border-box;
-
-	display: none;
-	background: #fff;
-	overflow: hidden;
-	color: #fff;
-	font-weight: 100;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+  border-radius: 4px;
+  width: auto;
+  box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  background-color: white;
 }
 
-.post p {
-	position: relative;
-	top: 30%;
-	text-align: center;
+.growy, .mixmag, .music, .wix {
+  background-size: cover;
+	width: 236px;
+	height: 348px;
+  margin-bottom: 20px;
 }
 
-#one {
-	background: #74CEB7;
-	color: #004056;
+.growy {
+  background-image: url(images/growy.png);
 }
 
-#two {
-	background: #004056;
+.card h3 {
+	width: 220px;
+	margin-top: 10px;
 }
 
-#three {
-	background: #2C858D;
+.icons {
+  margin-top: 14px;
+  display: flex;
 }
 
-.post.before, .post.active, .post.after {
-	display: block;
+.icons img {
+  width: auto;
+  max-height: 50px;
 }
 
-.post.active {
-	z-index: 45;
-	-webkit-transform: translate3d( 0, 0, 0 );
+.icon {
+  width: auto;
+  height: 50px;
 }
 
-.post.before {
-	-webkit-transform: translate3d( 0, -100%, 0 );
-	z-index: 40;
-	opacity: .75;
-}
-
-.post.after {
-	-webkit-transform: translate3d( 0, 100%, 0 );
-	z-index: 40;
-	opacity: .75;
-}
-
-.animate .post {
-	-webkit-transition: all .25s ease;
-	-webkit-backface-visibility: hidden;
-	-webkit-perspective: 1000;
-}
-
-.dragdown-reset .active {
-	-webkit-transform: translate3d( 0, 0, 0 ) !important;
-}
-.dragdown-reset .before {
-	-webkit-transform: translate3d( 0, -100%, 0 ) !important;
-}
-
-.dragdown-complete .active {
-	-webkit-transform: translate3d( 0, 100%, 0 ) !important;
-}
-.dragdown-complete .before {
-	-webkit-transform: translate3d( 0, 0, 0 ) !important;
-	opacity: 1 !important;
-}
-
-.dragdown-refresh .active {
-	-webkit-transform: translate3d( 0, 50px, 0 ) !important;
-}
-.dragdown-refresh .ptr {
-	-webkit-transition: all .25s ease;
-	-webkit-backface-visibility: hidden;
-	-webkit-perspective: 1000;
-	-webkit-transform: translate3d( 0, 20px, 0 ) !important;
-}
-
-.dragup-reset .active {
-	-webkit-transform: translate3d( 0, 0, 0 ) !important;
-}
-.dragup-reset .after {
-	-webkit-transform: translate3d( 0, 100%, 0 ) !important;
-} 
-
-.dragup-complete .active {
-	-webkit-transform: translate3d( 0, -100%, 0 ) !important;
-}
-.dragup-complete .after {
-	-webkit-transform: translate3d( 0, 0, 0 ) !important;
-	opacity: 1 !important;
+.icon:nth-child(2), .icon:nth-child(3) {
+  margin-left: 20px;
 }
